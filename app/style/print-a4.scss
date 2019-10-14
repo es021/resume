@@ -8,7 +8,7 @@ body {
   padding: 0;
 }
 
-.page {
+.page-a4 {
   width: 21cm;
   min-height: 29.7cm;
   margin: 1cm auto;
@@ -23,7 +23,7 @@ body {
 }
 
 @media print {
-  .page {
+  .page-a4 {
     margin: 0;
     border: initial;
     border-radius: initial;

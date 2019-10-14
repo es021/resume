@@ -36,7 +36,7 @@ var buildDevEntryPoint = function(entryPoint) {
 
 const entryPoint = {
   //main: ['babel-core/polyfill', APP_DIR + "/index.jsx"]
-  main: APP_DIR + "/index.js"
+  main: APP_DIR + "/index.jsx"
   //,loading: APP_DIR + "/loading.jsx"
 };
 
@@ -93,6 +93,20 @@ if (isProd && !allowProdMap) {
   ]);
 }
 
+var jsxLoader = {
+  test: /\.jsx?$/,
+  exclude: /node_modules/
+};
+if (isProd) {
+  jsxLoader.loader = "babel-loader";
+  jsxLoader.query = {
+    presets: ["es2015", "react", "modern-browsers"],
+    plugins: ["transform-es2015-modules-commonjs"]
+  };
+} else {
+  jsxLoader.loader = "babel-loader";
+}
+
 const cssLoader = {
   test: /\.css$/,
   loader: "style-loader!css-loader"
@@ -108,14 +122,10 @@ module.exports = {
   //devtool: 'source-map', // false -- bigger
   plugins: plugins,
   module: {
-    loaders: [
-      //jsxLoader,
-      cssLoader,
-      scssLoader
-    ]
+    loaders: [jsxLoader, cssLoader, scssLoader]
   },
   resolve: {
-    extensions: ["*", ".js"]
+    extensions: ["*", ".js", ".jsx"]
   },
   output: {
     path: BUILD_DIR,
