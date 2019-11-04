@@ -1,3 +1,7 @@
+$UL_MARGIN_TOP: 10px;
+$UL_MARGIN_BOTTOM: 25px;
+$LI_MARGIN_BOTTOM: 7px;
+
 .header {
   background: black;
   display: flex;
@@ -42,7 +46,6 @@
   }
 }
 
-
 .body {
   width: 100%;
   // background: red;
@@ -53,20 +56,20 @@
     // background:blue;
 
     width: 35%;
-    margin: 0px 25px;
+    margin: 0px 15px;
   }
 
   .b-right {
     // background:green;
 
     width: 65%;
-    margin: 0px 25px;
+    margin: 0px 15px;
   }
 
   .b-title {
     padding-bottom: 4px;
     border-bottom: 1px solid #bd6d14;
-    font-size: 20px;
+    font-size: 18px;
     color: #d08a09;
     font-weight: bold;
     text-transform: uppercase;
@@ -77,8 +80,7 @@
   }
 }
 
-
-#objective{
+#objective {
   p {
     margin-top: 15px;
     margin-bottom: 30px;
@@ -98,6 +100,8 @@ ul.table-list {
   list-style: none;
   padding: 0;
   margin: 0;
+  margin-top: 10px;
+  margin-bottom: 20px;
 
   li {
     display: flex;
@@ -113,7 +117,7 @@ ul.table-list {
       padding-left: 5px;
     }
 
-    margin:20px 0px;
+    margin: 15px 0px;
   }
 }
 
@@ -121,19 +125,103 @@ ul.simple-list {
   list-style: none;
   padding: 0;
   margin: 0;
+  margin-top: $UL_MARGIN_TOP;
+  margin-bottom: $UL_MARGIN_BOTTOM;
 
   li {
+    margin-bottom: $LI_MARGIN_BOTTOM;
+
+    display: flex;
     .li-label {
-      font-weight: bold;
+      width: 40%;
+      color: #757575;
       font-size: 13px;
-      margin-bottom: 3px;
+      margin-bottom: 2px;
     }
 
     .li-val {
+      width: 80%;
       font-size: 16px;
+    }
+  }
+}
 
+ul.level-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin-top: $UL_MARGIN_TOP;
+  margin-bottom: $UL_MARGIN_BOTTOM;
+
+  li {
+    margin-bottom: $LI_MARGIN_BOTTOM;
+
+    display: flex;
+    .li-label {
+      font-weight: bold;
+      width: 45%;
+      font-size: 13px;
+      padding-right: 10px;
     }
 
-    margin:20px 0px;
+    .li-level {
+      font-size: 12px;
+      width: 55%;
+
+      i {
+        color: gray;
+      }
+      i.selected {
+        color: #bd6d14;
+      }
+    }
+  }
+}
+
+ul.list-ref {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin-top: $UL_MARGIN_TOP;
+  margin-bottom: $UL_MARGIN_BOTTOM;
+
+  li {
+    margin-bottom: 15px;
+
+    .ref-name {
+      font-weight: bold;
+    }
+    .ref-title,
+    .ref-tel,
+    .ref-email {
+      color: #3c3b3b;
+    }
+  }
+}
+
+ul.list-social-media {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin-top: $UL_MARGIN_TOP;
+  margin-bottom: $UL_MARGIN_BOTTOM;
+
+  li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+
+    .soc-icon {
+      padding: 6px;
+      border-radius: 100%;
+      background: #3c3b3b;
+      color: white;
+      margin-right: 10px;
+      font-size: 15px;
+      font-weight: bold;
+    }
+    .soc-val {
+      width: 90%;
+    }
   }
 }
