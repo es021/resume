@@ -69,7 +69,7 @@ class Header {
       null
     );
 
-    let header = m("div", { class: "header" }, [hItem, image]);
+    let header = m("div", { class: "header-app" }, [hItem, image]);
     return header;
   }
 }
@@ -302,6 +302,7 @@ var __ = {
     let header = new Header();
     let body = new Body();
     return m("div", [header.view(), body.view()]);
+    //return m("div", [ body.view()]);
   }
 };
 
