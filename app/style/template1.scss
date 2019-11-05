@@ -133,15 +133,16 @@ ul.simple-list {
 
     display: flex;
     .li-label {
-      width: 40%;
-      color: #757575;
-      font-size: 13px;
+      width: 50%;
+      // color: #757575;
+      font-weight: bold;
+      font-size: 14px;
       margin-bottom: 2px;
     }
 
     .li-val {
       width: 80%;
-      font-size: 16px;
+      font-size: 15px;
     }
   }
 }
@@ -184,6 +185,7 @@ ul.list-ref {
   margin: 0;
   margin-top: $UL_MARGIN_TOP;
   margin-bottom: $UL_MARGIN_BOTTOM;
+  font-size: 14px;
 
   li {
     margin-bottom: 15px;
