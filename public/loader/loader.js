@@ -17,6 +17,7 @@ function MainLoadAsset(version) {
   var jsToLoad = [ASSET_ROOT + "/js/main.bundle.js"];
   var cssToLoad = [
     ASSET_ROOT + "/lib/fontawesome/css/all.min.css",
+    //ASSET_ROOT + "/lib/fontawesome/css/all.css",
     ASSET_ROOT + "/css/main.bundle.css"
   ];
 

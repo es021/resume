@@ -8,6 +8,10 @@ function getIcon(icon, className = "") {
   return m("i", { class: `fas fa-${icon} ${className}` }, null);
 }
 
+function getIconFab(icon, className = "") {
+  return m("i", { class: `fab fa-${icon} ${className}` }, null);
+}
+
 function simplelist_li(label, val) {
   return m("li", [m("div.li-label", label), m("div.li-val", val)]);
 }
@@ -113,7 +117,7 @@ class Body {
       socialMedia: [
         {
           icon: "linkedin-in",
-          color: "blue",
+          color: "#0077b5",
           val: "http://linkedin.com/in/siti-huwaida-muhammad-ghanisma-815498128"
         }
       ],
@@ -265,7 +269,7 @@ class Body {
         m(
           "div.soc-icon",
           { style: `background : ${d.color}` },
-          getIcon(d.icon)
+          getIconFab(d.icon)
         ),
         m("div.soc-val", m("a", { href: d.val, target: "_blank" }, d.val))
       ]);
@@ -273,7 +277,7 @@ class Body {
 
     return this.section(
       "social-media",
-      this.title("Social Media", "home"),
+      this.title("Social Media", "wifi"),
       m("ul.list-social-media", [list])
     );
   }
