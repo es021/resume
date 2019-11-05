@@ -1,6 +1,10 @@
 var HOST = window.location.host;
 var isProd = HOST.indexOf("localhost") <= -1 || HOST.indexOf("5500") >= 0;
+var isGitHub = HOST.indexOf("github") >= 0;
 var ASSET_ROOT = isProd ? "/public/asset" : "/asset";
+if (isGitHub) {
+  ASSET_ROOT = "/resume/public/asset";
+}
 
 function MainLoadAsset(version) {
   console.log("Start Load Asset", version);
