@@ -10,6 +10,7 @@ function MainLoadAsset(version) {
   console.log("Start Load Asset", version);
   console.log(window.location.host);
   console.log("isProd", isProd);
+  console.log("isGitHub", isGitHub);
 
   // init dom
   var body = document.getElementsByTagName("body")[0];
