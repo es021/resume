@@ -1,4 +1,5 @@
 import m from "mithril";
+import huwaida from "../data/huwaida";
 
 function getIconLeft(icon) {
   return m("i", { class: `fas fa-${icon} icon-left` }, null);
@@ -30,15 +31,7 @@ function table_li(label, val) {
 
 class Header {
   constructor() {
-    this.d = {
-      image: "image/huwaida.jpg",
-      university: "Iowa State University",
-      name: "Siti Huwaida",
-      phone: "+6010-9052569",
-      email: "sitihuwaida94@gmail.com",
-      address:
-        "A1-18-01, Kenwingston Residence, Persiaran Bestari 63000 Cyberjaya, Selangor"
-    };
+    this.d = huwaida.header;
   }
   _h_item(id, content) {
     return m("div", { id: id, class: "h-item" }, content);
@@ -64,7 +57,7 @@ class Header {
         style: `background-image: url('${this.d.image}');
                 background-position: center;
                 background-size:cover;
-                width: 190px;`
+                width: 160px;`
       },
       null
     );
@@ -74,89 +67,10 @@ class Header {
   }
 }
 
+
 class Body {
   constructor() {
-    this.d = {
-      reference: [
-        {
-          name: "Dr. Bethlin Hartmann",
-          title: "Senior Lecturer",
-          tel: "+1 (515) 294-8190",
-          email: "bethlin@iastate.edu"
-        },
-        {
-          name: "Dr. Oleg Zarechnyy",
-          title: "Lecturer",
-          tel: "+1 (515) 294-0096",
-          email: "olegzar@iastate.edu"
-        }
-      ],
-      experience: [
-        {
-          title: "Server",
-          duration: "Sept 2015 - July 2018",
-          location: "ISU Dining",
-          detail:
-            "Serving food to customers, as well as communicating efficiently with customers. Learned to work under pressure in fast paced working environment, while maintaining good relationship with customers and co-workers"
-        },
-        {
-          title: "Site Engineer",
-          duration: "Jan 2018 - May 2018",
-          location: "C.E. Capstone Project",
-          detail:
-            "Designed and developed site for Ames Wellness Center project. Working with other team members, especially geotechnical engineer and architecture to develop the project site. Self-learned Auto CAD Civil 3D software and completed technical design within a month. Learned to work under pressure while holding up commitments for other senior projects and classes."
-        },
-        {
-          title: "Highway Designer",
-          duration: "Jan 2018 - May 2018",
-          location: "Highway Design Class",
-          detail:
-            "Working with team members to design and develop highway in all aspects (speed limit, vertical and horizontal curve, etc). Responsible inhandling all software related processes to work onthe design for the team."
-        }
-      ],
-      socialMedia: [
-        {
-          icon: "linkedin-in",
-          color: "#0077b5",
-          val: "http://linkedin.com/in/siti-huwaida-muhammad-ghanisma-815498128"
-        }
-      ],
-      education: [
-        {
-          title: "Bachelor Of Civil Engineering",
-          duration: "2014 - 2018",
-          location:
-            "INTI International University, Nilai, Malaysia - Iowa State University, Ames, United States",
-          detail:
-            "Civil engineering oriented syllabus with additional subjects: Technical Communication, Engr Statistics, Speech Communication, etc."
-        },
-        {
-          title: "International Baccalaureate Diploma",
-          duration: "2012 - 2014",
-          location: "Kolej MARA Banting",
-          detail:
-            "General sciences courses related to engineering – Physics, Chemistry, Mathematics, Malay Language (Higher Level) and Information Technology in a Global Society, English Language (Standard Level)"
-        }
-      ],
-      name: "Siti Huwaida Muhammad Ghanisma",
-      dob: "15 January 1994",
-      nationality: "Malaysian",
-      sponsor: "MARA",
-      objective:
-        "Looking for admin position with One Diversity Sdn. Bhd. to utilize my skills and experiences",
-      proSkill: [
-        { label: "AutoCAD Civil 3D", level: 3 },
-        { label: "AutoCAD Revit", level: 4 },
-        { label: "Microsoft Word", level: 7 },
-        { label: "Microsoft Excel", level: 7 },
-        { label: "Microsoft Office", level: 8 }
-      ],
-      personalSkill: [
-        { label: "Communication", level: 8 },
-        { label: "Team Working", level: 9 }
-      ],
-      language: [{ label: "English", level: 8 }, { label: "Malay", level: 9 }]
-    };
+    this.d = huwaida.body;
   }
   title(txt, icon) {
     return m("div.b-title", [getIconLeft(icon), txt]);
@@ -181,10 +95,20 @@ class Body {
     /**
      * data {title, duration, location, detail}
      */
+
     let list = data.map((d, i) => {
+      let detail = null;
+      if (Array.isArray(d.detail)) {
+        detail = m("ul.basic", [d.detail.map((dd, di) => {
+          return m("li", dd);
+        })])
+      } else {
+        detail = m("p", d.detail);
+      }
+
       return table_li(
         [m("b", d.title), m("br"), d.duration],
-        [m("b", d.location), m("br"), m("p", d.detail)]
+        [m("b", d.location), m("br"), detail]
       );
     });
 
@@ -291,7 +215,9 @@ class Body {
         this.reference(),
         this.socialMedia()
       ]),
-      m("div.b-right", [this.objective(), this.experience(), this.education()])
+      m("div.b-right", [this.objective(),
+         this.experience(), this.education()
+        ])
     ]);
     return body;
   }
