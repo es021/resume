@@ -75,7 +75,7 @@ class Header {
 }
 
 class Body {
-  constructor() {
+  constructor(param) {
     this.d = {
       reference: [
         {
@@ -155,8 +155,13 @@ class Body {
         { label: "Communication", level: 8 },
         { label: "Team Working", level: 9 }
       ],
-      language: [{ label: "English", level: 8 }, { label: "Malay", level: 9 }]
+      language: [
+        { label: "English", level: 8 },
+        { label: "Malay", level: 9 }
+      ]
     };
+
+    this.d = { ...this.d, ...param };
   }
   title(txt, icon) {
     return m("div.b-title", [getIconLeft(icon), txt]);
@@ -297,13 +302,52 @@ class Body {
   }
 }
 
-var __ = {
-  view: () => {
-    let header = new Header();
-    let body = new Body();
-    return m("div", [header.view(), body.view()]);
-    //return m("div", [ body.view()]);
+// var __ = {
+//   view: () => {
+//     let header = new Header();
+//     let body = new Body({
+//       objective: "Asdasd"
+//     });
+
+//     return m("div", [header.view(), body.view()]);
+//     //return m("div", [ body.view()]);
+//   }
+// };
+
+function __(initialVnode) {
+  var paramBody = {
+    objective : "Looking for admin position with One Diversity Sdn. Bhd. to utilize my skills and experiences"
+  };
+
+  function getEditDataBody(key, btnLabel, promptLabel) {
+    return m(
+      ".edit-data",
+      m(
+        "button",
+        {
+          onclick: () => {
+            var obj = prompt(promptLabel, paramBody[key]);
+            if (obj != null) {
+              paramBody[key] = obj;
+            }
+          }
+        },
+        btnLabel
+      )
+    );
   }
-};
+
+  return {
+    view: () => {
+      let header = new Header();
+      let body = new Body(paramBody);
+      return m("div", [
+        getEditDataBody("objective", "Edit Objective", "Enter custom objective"),
+        header.view(),
+        body.view()
+      ]);
+    }
+  };
+}
 
 export default __;

@@ -5,3 +5,17 @@ html {
 .icon-left {
   margin-right: 3px;
 }
+
+.edit-data{
+  position: fixed;
+  left: 0;
+  top:0;
+  margin: 10px;
+  button{
+    cursor: pointer;
+    border: none;
+    background: rgb(43, 43, 194);
+    padding: 10px;
+    color: white
+  }
+}
