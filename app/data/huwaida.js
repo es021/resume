@@ -88,7 +88,7 @@ export default {
             // },
             {
                 label: "Microsoft Word",
-                level: 10
+                level: 9
             },
             {
                 label: "Microsoft Excel",
@@ -96,7 +96,7 @@ export default {
             },
             {
                 label: "Customer Relationship Management (CRM)",
-                level: 7
+                level: 10
             }
         ],
         personalSkill: [{

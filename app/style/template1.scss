@@ -4,7 +4,7 @@ $LI_MARGIN_BOTTOM: 7px;
 $GLOBAL_FONT: 13px;
 
 .header-app {
-  height: 175px;
+  height: 200px;
   background: black;
   display: flex;
 
@@ -76,6 +76,7 @@ $GLOBAL_FONT: 13px;
   }
 
   .b-title {
+    padding-top: 7px;
     padding-bottom: 3px;
     border-bottom: 1px solid #bd6d14;
     font-size: 16px;
