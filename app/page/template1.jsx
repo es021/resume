@@ -68,9 +68,8 @@ class Header {
 }
 
 class Body {
-  constructor(param) {
-    this.d = huwaida.body;
-    this.d = { ...this.d, ...param };
+  constructor(defaultParam, customParam) {
+    this.d = { ...defaultParam, ...customParam };
   }
   title(txt, icon) {
     return m("div.b-title", [getIconLeft(icon), txt]);
@@ -129,11 +128,16 @@ class Body {
     );
   }
   curricular() {
-    return this.tableContent(
+    let list = this.d.curricular.map((d, i) => {
+      return m("li", [
+        m("div.cur-title", [d.title, m("span.cur-duration", " (" + d.duration + ")")]),
+      ]);
+    });
+
+    return this.section(
       "curricular",
-      "Curriculars",
-      "list",
-      this.d.curricular
+      this.title("Curricular", "list"),
+      m("ul.list-curricular", [list])
     );
   }
   experience() {
@@ -244,9 +248,9 @@ class Body {
 // };
 
 function __(initialVnode) {
-  var paramBody = {
-    objective:
-      "Looking for admin position with One Diversity Sdn. Bhd. to utilize my skills and experiences"
+  var defaultParam = huwaida.body;
+  var customParam = {
+    objective: defaultParam.objective
   };
 
   function getEditDataBody(key, btnLabel, promptLabel) {
@@ -256,9 +260,9 @@ function __(initialVnode) {
         "button",
         {
           onclick: () => {
-            var obj = prompt(promptLabel, paramBody[key]);
+            var obj = prompt(promptLabel, customParam[key]);
             if (obj != null) {
-              paramBody[key] = obj;
+              customParam[key] = obj;
             }
           }
         },
@@ -270,7 +274,7 @@ function __(initialVnode) {
   return {
     view: () => {
       let header = new Header();
-      let body = new Body(paramBody);
+      let body = new Body(defaultParam, customParam);
       return m("div", [
         getEditDataBody(
           "objective",

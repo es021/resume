@@ -10,32 +10,32 @@ export default {
     body: {
         objective: "Looking for Customer Service Executive position at HSBC.",
         reference: [{
-                name: "Mohd Afiq Azim bin Md Darom",
-                title: "ESRI APACSC Quality Assurance Lead",
-                tel: "+601-97510577",
-                email: "MMdDarom@esri.com"
-            },
-            {
-                name: "Dr. Oleg Zarechnyy",
-                title: "Lecturer",
-                tel: "+1 (515) 294-0096",
-                email: "olegzar@iastate.edu"
-            }
+            name: "Mohd Afiq Azim bin Md Darom",
+            title: "ESRI APACSC Quality Assurance Lead",
+            tel: "+601-97510577",
+            email: "MMdDarom@esri.com"
+        },
+        {
+            name: "Dr. Oleg Zarechnyy",
+            title: "Lecturer",
+            tel: "+1 (515) 294-0096",
+            email: "olegzar@iastate.edu"
+        }
         ],
         experience: [{
-                title: "Technical (GIS) Support Analyst",
-                duration: "Jan 2019 - Present",
-                location: "Confluence Contours (M) Sdn Bhd",
-                detail: [
-                    "Provide high-quality support to end users software to solve technical problems quickly and effectively.",
-                    "Provide support and technical issue of resolution via E-Mail, phone and other electronic medium such as Zoom for screensharing session.",
-                    "Identify, understand, and recommend solutions for customer issues or questions using working knowledge of ArcGIS product and technologies.",
-                    //"As the Subject Matter Expert, document technical issues through incident tracking involving authorizing, technical editing, and publishing of Knowledge Base articles and various authoritative online content.",
-                    "Develop and create documentation used to partner with software development teams to troubleshoot issues and evaluate solutions",
-                    //"Interpret user issues to determine or recommend software changes to programmers / software engineers",
-                    "May also work in other technical areas of software support as customer and business needs demand.",
-                ]
-            },
+            title: "Technical (GIS) Support Analyst",
+            duration: "Jan 2019 - Present",
+            location: "Confluence Contours (M) Sdn Bhd",
+            detail: [
+                "Provide high-quality support to end users software to solve technical problems quickly and effectively.",
+                "Provide support and technical issue of resolution via E-Mail, phone and other electronic medium such as Zoom for screensharing session.",
+                "Identify, understand, and recommend solutions for customer issues or questions using working knowledge of ArcGIS product and technologies.",
+                //"As the Subject Matter Expert, document technical issues through incident tracking involving authorizing, technical editing, and publishing of Knowledge Base articles and various authoritative online content.",
+                "Develop and create documentation used to partner with software development teams to troubleshoot issues and evaluate solutions",
+                "Interpret user issues to determine or recommend software changes to programmers / software engineers",
+                "May also work in other technical areas of software support as customer and business needs demand.",
+            ]
+        },
             // {
             //     title: "Server",
             //     duration: "Sep 2015 - July 2018",
@@ -62,36 +62,30 @@ export default {
         }],
         curricular: [
             {
-                title: "Curricular 1",
-                duration: "2014 - 2018",
-                location: "INTI International University, Nilai, Malaysia - Iowa State University, Ames, United States",
-                detail: "Civil engineering oriented syllabus with additional subjects: Technical Communication, Engr Statistics, Speech Communication, etc."
+                title: "Leadership Conference: Engineering Leaders of Tomorrow",
+                duration: "2017",
             },
             {
-                title: "Curricular 1",
-                duration: "2014 - 2018",
-                location: "INTI International University, Nilai, Malaysia - Iowa State University, Ames, United States",
-                detail: "Civil engineering oriented syllabus with additional subjects: Technical Communication, Engr Statistics, Speech Communication, etc."
+                title: "ISU Engineering Career Fair Ambassador",
+                duration: "2017",
             },
             {
-                title: "Curricular 1",
-                duration: "2014 - 2018",
-                location: "INTI International University, Nilai, Malaysia - Iowa State University, Ames, United States",
-                detail: "Civil engineering oriented syllabus with additional subjects: Technical Communication, Engr Statistics, Speech Communication, etc."
+                title: "International Friendship Fair Ambassador by YWCA Ames- ISU",
+                duration: "2017",
             },
         ],
         education: [{
-                title: "Bachelor Of Civil Engineering",
-                duration: "2014 - 2018",
-                location: "INTI International University, Nilai, Malaysia - Iowa State University, Ames, United States",
-                detail: "Civil engineering oriented syllabus with additional subjects: Technical Communication, Engr Statistics, Speech Communication, etc."
-            },
-            // {
-            //     title: "International Baccalaureate Diploma",
-            //     duration: "2012 - 2014",
-            //     location: "Kolej MARA Banting",
-            //     detail: "General sciences courses related to engineering – Physics, Chemistry, Mathematics, Malay Language (Higher Level) and Information Technology in a Global Society, English Language (Standard Level)"
-            // }
+            title: "Bachelor Of Civil Engineering",
+            duration: "2014 - 2018",
+            location: "INTI International University, Nilai, Malaysia - Iowa State University, Ames, United States",
+            detail: "Civil engineering oriented syllabus with additional subjects: Technical Communication, Engr Statistics, Speech Communication, etc."
+        },
+        {
+            title: "International Baccalaureate Diploma",
+            duration: "2012 - 2014",
+            location: "Kolej MARA Banting",
+            detail: "General sciences courses related to engineering – Physics, Chemistry, Mathematics, Malay Language (Higher Level) and Information Technology in a Global Society, English Language (Standard Level)"
+        }
         ],
         name: "Siti Huwaida Muhammad Ghanisma",
         dob: "15 January 1994",
@@ -121,13 +115,13 @@ export default {
 
         ],
         personalSkill: [{
-                label: "Communication",
-                level: 9
-            },
-            {
-                label: "Team Working",
-                level: 9
-            }
+            label: "Communication",
+            level: 9
+        },
+        {
+            label: "Team Working",
+            level: 9
+        }
         ],
         language: [{
             label: "English",
