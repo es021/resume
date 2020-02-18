@@ -78,11 +78,15 @@ class Body {
     return m("div", { id: id, class: "section" }, [mTitle, mBody]);
   }
   objective() {
-    return this.section(
-      "objective",
-      this.title("Objective", "bullseye"),
-      m("p", this.d.objective)
-    );
+    if(this.d.objective){
+      return this.section(
+        "objective",
+        this.title("Objective", "bullseye"),
+        m("p", this.d.objective)
+      );
+    }
+
+    return null;
   }
   level(id, title, icon, data) {
     let li = data.map((d, i) => {
