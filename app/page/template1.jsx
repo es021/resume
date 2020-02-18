@@ -128,6 +128,14 @@ class Body {
       this.d.education
     );
   }
+  curricular() {
+    return this.tableContent(
+      "curricular",
+      "Curriculars",
+      "list",
+      this.d.curricular
+    );
+  }
   experience() {
     return this.tableContent(
       "experience",
@@ -217,7 +225,7 @@ class Body {
         this.reference(),
         this.socialMedia()
       ]),
-      m("div.b-right", [this.objective(), this.experience(), this.education()])
+      m("div.b-right", [this.objective(), this.education(), this.experience(), this.curricular()])
     ]);
     return body;
   }
