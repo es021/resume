@@ -5,10 +5,12 @@ export default {
         name: "Siti Huwaida",
         phone: "+6010-9052569",
         email: "sitihuwaida94@gmail.com",
-        address: "A1-18-01, Kenwingston Residence, Persiaran Bestari 63000 Cyberjaya, Selangor"
+        address: "SB-13-03, Paragon Tower, Persiaran Bestari 63000 Cyberjaya, Selangor"
     },
     body: {
-        objective: "Looking for Customer Service Executive position at HSBC.",
+        position: "Position Name",
+        company: "Company Name",
+        objective: "Looking for {{POSITION}} position at {{COMPANY}}.",
         reference: [{
             name: "Mohd Afiq Azim bin Md Darom",
             title: "ESRI APACSC Quality Assurance Lead",
@@ -22,20 +24,38 @@ export default {
             email: "olegzar@iastate.edu"
         }
         ],
-        experience: [{
-            title: "Technical (GIS) Support Analyst",
-            duration: "Jan 2019 - Present",
-            location: "Confluence Contours (M) Sdn Bhd",
-            detail: [
-                "Provide high-quality support to end users software to solve technical problems quickly and effectively.",
-                "Provide support and technical issue of resolution via E-Mail, phone and other electronic medium such as Zoom for screensharing session.",
-                "Identify, understand, and recommend solutions for customer issues or questions using working knowledge of ArcGIS product and technologies.",
-                //"As the Subject Matter Expert, document technical issues through incident tracking involving authorizing, technical editing, and publishing of Knowledge Base articles and various authoritative online content.",
-                "Develop and create documentation used to partner with software development teams to troubleshoot issues and evaluate solutions",
-                "Interpret user issues to determine or recommend software changes to programmers / software engineers",
-                "May also work in other technical areas of software support as customer and business needs demand.",
-            ]
-        },
+        experience: [
+            {
+                title: "Technical & Customer Support Executive",
+                duration: "May 2020 - Present",
+                location: "Razer Merchant Services Sdn Bhd",
+                detail: [
+                    "Maintain company's operational activities including merchant onboarding, and system integration.",
+                    "Provide support to merchants, customers and prospects via e-mail, phone, and chat.",
+                    "Investigate various issues reported by merchants such as settlements, transactions and technical matter.",
+                    "Post-deployment monitoring to ensure high transaction success rate.",
+                    "Liaise with all departments including developer, sales, frauds, risk and financial to achieve proper solution for merchants.",
+                    // "Provide support to merchants, customers and prospects via E-Mail, phone, and chat (front line support).",
+                    // "Investigate and identify issues escalated by merchants such as settlements, transactions and technical matter.",
+                    // "Post-deployment monitoring to ensure high transaction success rate is maintained and escalate any issues quickly to developer team.",
+                ]
+            },
+            {
+                title: "Technical (GIS) Support Analyst (APAC)",
+                duration: "Jan 2019 - May 2020",
+                location: "Confluence Contours (M) Sdn Bhd",
+                detail: [
+                    // "Provide high-quality support to end users software to solve technical problems quickly and effectively.",
+                    "Provide high-quality support to end users software to solve technical problems effectively.",
+                    "Provide support and technical issue of resolution via E-Mail, phone and screensharing session.",
+                    // "Provide support and technical issue of resolution via E-Mail, phone and other electronic medium such as Zoom for screensharing session.",
+                    "Identify, understand, and recommend solutions for customer issues or questions using working knowledge of ArcGIS product and technologies.",
+                    //"As the Subject Matter Expert, document technical issues through incident tracking involving authorizing, technical editing, and publishing of Knowledge Base articles and various authoritative online content.",
+                    "Develop and create documentation used to partner with software development teams to troubleshoot issues and evaluate solutions",
+                    "Interpret user issues to determine or recommend software changes to programmers / software engineers",
+                    // "May also work in other technical areas of software support as customer and business needs demand.",
+                ]
+            },
             // {
             //     title: "Server",
             //     duration: "Sep 2015 - July 2018",

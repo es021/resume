@@ -78,10 +78,13 @@ class Body {
     return m("div", { id: id, class: "section" }, [mTitle, mBody]);
   }
   objective() {
+    let text = this.d.objective;
+    text = text.replace("{{POSITION}}", this.d.position)
+    text = text.replace("{{COMPANY}}", this.d.company)
     return this.section(
       "objective",
       this.title("Objective", "bullseye"),
-      m("p", this.d.objective)
+      m("p", text)
     );
   }
   level(id, title, icon, data) {
@@ -141,12 +144,30 @@ class Body {
     );
   }
   experience() {
-    return this.tableContent(
+    let items = this.d.experience.map((d, i) => {
+      let list = d.detail.map((_d, _i) => {
+        return m("li", _d);
+      });
+      return m("div", { style: "font-size:13px" }, [
+        m("b", d.title),
+        m("br"),
+        m("span", d.location),
+        m("span", { style: "margin-left:7px; color:#3c3b3b;", }, "(" + d.duration + " )"),
+        m("ul", { style: "margin-left:-22px;" }, list)
+      ])
+    })
+    return this.section(
       "experience",
-      "Experiences",
-      "suitcase",
-      this.d.experience
+      this.title("Experiences", "suitcase"),
+      m("div",{ style: "margin-top:7px;" } ,items)
     );
+
+    // return this.tableContent(
+    //   "experience",
+    //   "Experiences",
+    //   "suitcase",
+    //   this.d.experience
+    // );
   }
   aboutMe() {
     return this.section(
@@ -250,24 +271,22 @@ class Body {
 function __(initialVnode) {
   var defaultParam = huwaida.body;
   var customParam = {
-    objective: defaultParam.objective
+    position: defaultParam.position,
+    company: defaultParam.company,
   };
 
   function getEditDataBody(key, btnLabel, promptLabel) {
     return m(
-      ".edit-data",
-      m(
-        "button",
-        {
-          onclick: () => {
-            var obj = prompt(promptLabel, customParam[key]);
-            if (obj != null) {
-              customParam[key] = obj;
-            }
+      "button",
+      {
+        onclick: () => {
+          var obj = prompt(promptLabel, customParam[key]);
+          if (obj != null) {
+            customParam[key] = obj;
           }
-        },
-        btnLabel
-      )
+        }
+      },
+      btnLabel
     );
   }
 
@@ -276,10 +295,21 @@ function __(initialVnode) {
       let header = new Header();
       let body = new Body(defaultParam, customParam);
       return m("div", [
-        getEditDataBody(
-          "objective",
-          "Edit Objective",
-          "Enter custom objective"
+        m(
+          "div.edit-data-container",
+          [
+            getEditDataBody(
+              "position",
+              "Edit Position",
+              "Enter custom position"
+            ),
+            m("br"),
+            getEditDataBody(
+              "company",
+              "Edit Company",
+              "Enter custom company"
+            )
+          ]
         ),
         header.view(),
         body.view()
