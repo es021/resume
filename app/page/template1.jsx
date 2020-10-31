@@ -78,6 +78,7 @@ class Body {
     return m("div", { id: id, class: "section" }, [mTitle, mBody]);
   }
   objective() {
+<<<<<<< HEAD
     let text = this.d.objective;
     text = text.replace("{{POSITION}}", this.d.position)
     text = text.replace("{{COMPANY}}", this.d.company)
@@ -86,6 +87,17 @@ class Body {
       this.title("Objective", "bullseye"),
       m("p", text)
     );
+=======
+    if(this.d.objective){
+      return this.section(
+        "objective",
+        this.title("Objective", "bullseye"),
+        m("p", this.d.objective)
+      );
+    }
+
+    return null;
+>>>>>>> 2f1ccd511cdc52f249c8729ec86079cb917b7a9a
   }
   level(id, title, icon, data) {
     let li = data.map((d, i) => {
