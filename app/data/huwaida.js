@@ -26,8 +26,8 @@ export default {
         ],
         experience: [
             {
-                title: "Technical & Customer Support Executive",
-                duration: "May 2020 - Present",
+                title: "Technical & Customer Support Executive (Operation)",
+                duration: "May 2020 - Jan 2021",
                 location: "Razer Merchant Services Sdn Bhd",
                 detail: [
                     "Maintain company's operational activities including merchant onboarding, and system integration.",

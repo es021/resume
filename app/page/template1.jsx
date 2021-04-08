@@ -152,14 +152,14 @@ class Body {
         m("b", d.title),
         m("br"),
         m("span", d.location),
-        m("span", { style: "margin-left:7px; color:#3c3b3b;", }, "(" + d.duration + " )"),
+        m("span", { style: "margin-left:7px; color:#3c3b3b;", }, "(" + d.duration + ")"),
         m("ul", { style: "margin-left:-22px;" }, list)
       ])
     })
     return this.section(
       "experience",
       this.title("Experiences", "suitcase"),
-      m("div",{ style: "margin-top:7px;" } ,items)
+      m("div", { style: "margin-top:7px;" }, items)
     );
 
     // return this.tableContent(
@@ -298,6 +298,12 @@ function __(initialVnode) {
         m(
           "div.edit-data-container",
           [
+            getEditDataBody(
+              "objective",
+              "Edit Objective",
+              "Enter custom objective"
+            ),
+            m("br"),
             getEditDataBody(
               "position",
               "Edit Position",
