@@ -1,3 +1,14 @@
+// Contact Centre Executive
+// Business Processing Executive
+// Data Entry Typist
+// Administration Assistant @ IOI Group
+// Administration Assistant @ Coway
+// Apprenticeship Human Resource Management @ MANAGEMENT MADE EASY SDN BHD
+// Apprenticeship Human Resource Management @ CUCMS Education Sdn. Bhd
+// Project Engineer @ Alunan Asas Sdn Bhd
+// Customer Support @ RAMS Solutions Sdn Bhd
+// Customer Service @ AGENSI PEKERJAAN ASIA RECRUIT SDN BHD
+
 export default {
     header: {
         image: "image/huwaida.jpg",
@@ -11,18 +22,25 @@ export default {
         position: "Position Name",
         company: "Company Name",
         objective: "Looking for {{POSITION}} position at {{COMPANY}}.",
-        reference: [{
-            name: "Mohd Afiq Azim bin Md Darom",
-            title: "ESRI APACSC Quality Assurance Lead",
-            tel: "+601-97510577",
-            email: "MMdDarom@esri.com"
-        },
-        {
-            name: "Dr. Oleg Zarechnyy",
-            title: "Lecturer",
-            tel: "+1 (515) 294-0096",
-            email: "olegzar@iastate.edu"
-        }
+        reference: [
+            {
+                name: "Atikah Binti Mohamad Zain ",
+                title: "Head of Department of Operations",
+                tel: "+6019-5166825",
+                email: "atik.zain@razer.com"
+            },
+            {
+                name: "Mohd Afiq Azim bin Md Darom",
+                title: "ESRI APACSC Quality Assurance Lead",
+                tel: "+6019-7510577",
+                email: "MMdDarom@esri.com"
+            },
+            {
+                name: "Dr. Oleg Zarechnyy",
+                title: "Lecturer",
+                tel: "+1 (515) 294-0096",
+                email: "olegzar@iastate.edu"
+            }
         ],
         experience: [
             {
