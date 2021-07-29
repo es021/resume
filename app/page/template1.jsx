@@ -177,7 +177,8 @@ class Body {
         simplelist_li("Name", this.d.name),
         simplelist_li("Date of Birth", this.d.dob),
         simplelist_li("Nationality", this.d.nationality),
-        simplelist_li("Sponsor", this.d.sponsor)
+        simplelist_li("Sponsor", this.d.sponsor),
+        simplelist_li("Last Drawn Salary", this.d.last_salary),
       ])
     );
   }

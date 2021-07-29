@@ -129,6 +129,7 @@ export default {
         dob: "15 January 1994",
         nationality: "Malaysian",
         sponsor: "MARA",
+        last_salary: "RM 2700",
         proSkill: [
             // {
             //     label: "AutoCAD Civil 3D",
